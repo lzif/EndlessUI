@@ -1,0 +1,11 @@
+# Lune/Luau
+.lune-cache
+*.luau-analyze-cache.json
+
+# Build artifacts
+build/
+dist/
+
+# OS generated files
+.DS_Store
+Thumbs.db

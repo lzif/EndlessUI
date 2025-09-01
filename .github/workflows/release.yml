@@ -1,0 +1,30 @@
+name: Release Library
+
+on:
+  push:
+    tags:
+      - 'v*.*.*' # Trigger on tags like v1.0.0
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to create the release
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Lune
+        uses: lune-org/setup-lune@v1
+        with:
+          version: '0.8.x' # Using a recent version of Lune
+
+      - name: Build the library
+        run: lune build src --output RobloxUI.lua
+
+      - name: Create Release and Upload Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: RobloxUI.lua
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
