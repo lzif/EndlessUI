@@ -1,4 +1,4 @@
-# Roblox UI Library
+# Endless UI Library
 
 UI Library sederhana dan fleksibel untuk Roblox, dengan dukungan PC & Mobile.  
 Menyediakan sistem window, tab, dan berbagai elemen UI dengan tema modern.
